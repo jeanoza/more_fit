@@ -1,6 +1,6 @@
 {
 	"extends": "next/core-web-vitals",
-	"ignorePatterns":["jest.config.js", "jest.setup.js"],
+	"ignorePatterns":["jest.config.js", "jest.setup.js", "next.config.js"],
 	"rules":{
 		"indent": [
 			"error",

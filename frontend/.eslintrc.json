@@ -1,3 +1,11 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": "next/core-web-vitals",
+	"ignorePatterns":["jest.config.js", "jest.setup.js"],
+	"rules":{
+		"indent": [
+			"error",
+			"tab",
+			{ "SwitchCase": 1 }
+		]
+	}
 }

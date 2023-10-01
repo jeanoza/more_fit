@@ -30,29 +30,6 @@ AppDataSource.initialize()
 		// start express server
 		app.listen(process.env.SERVER_PORT);
 
-		// insert new users for test when no test user
-		// const userCount = await AppDataSource.manager.count(User);
-		// if (userCount === 0) {
-		//   await AppDataSource.manager.save(
-		//     AppDataSource.manager.create(User, {
-		//       nickName: "Castor",
-		//       firstName: "Timber",
-		//       lastName: "Saw",
-		//       email: "timber@gmail.com",
-		//       password:"test1"
-		//     })
-		//   );
-
-		//   await AppDataSource.manager.save(
-		//     AppDataSource.manager.create(User, {
-		//       nickName: "Phan",
-		//       firstName: "Phantom",
-		//       lastName: "Assassin",
-		//       email: "phantom@gmail.com",
-		//       password:"test1"
-		//     })
-		//   );
-		// }
 
 		console.log(`Express server has started on port ${process.env.SERVER_PORT}`);
 	})

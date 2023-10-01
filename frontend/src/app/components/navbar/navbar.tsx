@@ -12,12 +12,13 @@ export interface NavbarProps {
 
 export const NAVBAR_LINKS:NavbarLink[] =  [
 	{title: 'home', url: '/'},
+	{title: 'about', url: '/about'},
 ]
 
 export default function Navbar (props:NavbarProps) {
 	return <nav data-testid='navbar' className="flex justify-between">
 		<Link href='/'>Logo</Link>
-		<ul className="flex">
+		<ul className="flex gap-1">
 			{NAVBAR_LINKS.map((link, i) => <li key={`link[${i}]`} className="capitalize">
 				<Link href={link.url}>{link.title}</Link>
 			</li>)}

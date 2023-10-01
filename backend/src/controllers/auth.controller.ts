@@ -9,6 +9,7 @@ export class AuthController {
 	constructor(private readonly userService: UserService) {}
 
 	getAuth(req: Request, res: Response) {
+		console.log('HERE');
 		try {
 			const key = 'accessToken';
 			const { cookie } = req.headers;

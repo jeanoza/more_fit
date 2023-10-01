@@ -17,7 +17,7 @@ AppDataSource.initialize()
 		app.use(express.json());
 		app.use(
 			cors({
-				origin: 'http://localhost:3333', // TO put in env
+				origin: 'http://localhost:3000', // TO put in env
 				credentials: true
 			})
 		);

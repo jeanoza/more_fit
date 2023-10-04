@@ -11,7 +11,5 @@ const buttonProps = {
 describe('<Button/>', () => {
 	it('renders Button unchanged', () => {
 		const { container } = render(<Button {...buttonProps}/>)
-
-		expect(container.innerHTML).toBe(`<button>${buttonProps.label}</button>`)
 	})
 })

@@ -27,7 +27,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 		<html lang="en">
 			<body className={inter.className}>
 				<Navbar auth={auth}/>
-				<main>{children}</main>
+				<main className=''>{children}</main>
 			</body>
 		</html>
 	)

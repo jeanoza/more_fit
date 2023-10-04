@@ -2,8 +2,8 @@
  * @jest-environment jsdom
  */
 import { render } from '@testing-library/react'
-import SiginIn from '../../../(auth)/sign-in/page';
+import Dashbaord from '@/app/dashboard/page';
  
 it('renders homepage unchanged', () => {
-	const { container } = render(<SiginIn />)
+	const { container } =  render(<Dashbaord />)
 })

@@ -11,8 +11,9 @@ export interface NavbarProps {
 }
 
 export const NAVBAR_LINKS:NavbarLink[] =  [
-	{title: 'home', url: '/'},
-	{title: 'about', url: '/about'},
+	{title: 'dashboard', url: '/dashboard'},
+	{title: 'sport', url: '/sport'},
+	{title: 'food', url: '/food'},
 ]
 
 export default function Navbar (props:NavbarProps) {

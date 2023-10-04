@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 
 // FIXME: on production, verify URL
 async function getAuth() {
-	console.log("getAuth", API_URL)
 	return fetch(`${API_URL}/auth`, {
 		cache: "no-store",
 	}).then(res => res.json()).then(data => {

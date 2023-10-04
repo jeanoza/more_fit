@@ -1,7 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Navbar from './components/navbar/navbar'
+import Navbar from '@/app/components/navbar/navbar'
+import { API_URL } from '@/app/utils/constants'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
 
 // FIXME: on production, verify URL
 async function getAuth() {
-	return fetch(`http://backend:8000/api/auth`, {
+	console.log("getAuth", API_URL)
+	return fetch(`${API_URL}/auth`, {
 		cache: "no-store",
 	}).then(res => res.json()).then(data => {
 		if (data.auth) return true;

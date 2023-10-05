@@ -4,7 +4,7 @@ interface SignFormProps {
 	children:React.ReactNode;
 }
 
-export function SignForm ({children}:SignFormProps){
+export default function SignForm ({children}:SignFormProps){
 	function handleSubmit () {
 		if (children && Array.isArray(children)){
 			const obj:Record<string, any> = {};

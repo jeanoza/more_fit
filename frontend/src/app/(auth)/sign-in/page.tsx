@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import { SignForm } from "../sign-form";
+import SignForm from "../sign-form";
 import InputField from "@/app/components/input/input-field";
 
 export default function SignIn() {

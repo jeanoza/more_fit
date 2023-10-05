@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import Button from '@/app/components/button/button'
+import Button from './button'
 import { render } from '@testing-library/react'
 
 const buttonProps = {

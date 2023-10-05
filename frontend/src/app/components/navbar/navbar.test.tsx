@@ -2,8 +2,7 @@
  * @jest-environment jsdom
  */
 import '@testing-library/jest-dom'
-import { ButtonProps } from '@/app/components/button/button'
-import Navbar, { NAVBAR_LINKS, NavbarProps} from '@/app/components/navbar/navbar'
+import Navbar, { NAVBAR_LINKS, NavbarProps} from './navbar'
 import { render, screen } from '@testing-library/react'
 
 

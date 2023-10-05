@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 import { render, screen } from '@testing-library/react'
-import SiginIn from '../../../(auth)/sign-in/page';
+import SiginIn from './page';
  
 describe('<SignIn/>', () => {
 	it ('render without error and necessary elements exist on page', () => {

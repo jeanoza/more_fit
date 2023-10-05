@@ -2,8 +2,8 @@
  * @jest-environment jsdom
  */
 import { render } from '@testing-library/react'
-import Dashbaord from '@/app/dashboard/page';
+import Home from './page';
  
 it('renders homepage unchanged', () => {
-	const { container } =  render(<Dashbaord />)
+	const { container } =  render(<Home />)
 })

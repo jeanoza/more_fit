@@ -64,7 +64,6 @@ export class AuthController {
 				email: user.email,
 			});
 
-			//FIXME: after test delete token2
 			res.cookie('accessToken', accessToken, {
 				httpOnly: true,
 				secure: true,

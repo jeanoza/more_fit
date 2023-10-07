@@ -15,10 +15,10 @@ const authController = new AuthController(userService);
 router.get('/', authController.getAuth.bind(authController));
 
 //signout(logout)
-router.get('/signout', authController.logout.bind(authController));
+router.get('/sign-out', authController.logout.bind(authController));
 //signin(login)
-router.post('/signin', authController.login.bind(authController));
+router.post('/sign-in', authController.login.bind(authController));
 //signup(register)
-router.post('/signup', validateCreateUser, authController.register.bind(authController));
+router.post('/sign-up', validateCreateUser, authController.register.bind(authController));
 
 export default router;

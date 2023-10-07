@@ -9,13 +9,14 @@ export async function validateCreateUser(
 ) {
 	try {
 		const { body } = req;
+		console.log(body);
 		const createUserDto = new CreateUserDto();
-		createUserDto.nickName = body.nickName;
-		createUserDto.firstName = body.firstName;
-		createUserDto.lastName = body.lastName;
+		createUserDto.nickName = body.nick_name;
+		createUserDto.firstName = body.first_name;
+		createUserDto.lastName = body.last_name;
 		createUserDto.email = body.email.toLowerCase(); // FIXME: this way is correct and clean?
 		createUserDto.password = body.password;
-		createUserDto.age = body.age;
+		createUserDto.age = body.age ?? null;
 
 		const errors = await validate(createUserDto);
 

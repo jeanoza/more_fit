@@ -20,6 +20,10 @@ export const NAVBAR_LINKS:NavbarLink[] =  [
 
 export default function Navbar (props:NavbarProps) {
 	const {data, error} = useFetch<{auth:boolean}>(`${API_URL}/auth`, {
+		headers:{
+			Accept: "application/json",
+			"Content-Type": "application/json",
+		},
 		cache: "no-store",
 		credentials:"include"
 	});

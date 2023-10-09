@@ -1,3 +1,6 @@
+'use client'
+import useFetch from "@/app/hooks/useFetch";
+import { API_URL } from "@/app/utils/constants";
 import Link from "next/link";
 
 export interface NavbarLink {
@@ -7,7 +10,6 @@ export interface NavbarLink {
 
 
 export interface NavbarProps {
-	auth:boolean;
 }
 
 export const NAVBAR_LINKS:NavbarLink[] =  [
@@ -17,6 +19,12 @@ export const NAVBAR_LINKS:NavbarLink[] =  [
 ]
 
 export default function Navbar (props:NavbarProps) {
+	const {data, error} = useFetch<{auth:boolean}>(`${API_URL}/auth`, {
+		cache: "no-store",
+		credentials:"include"
+	});
+	// console.log(auth, error);
+	console.log(data, error);
 	return <nav data-testid='navbar' className="flex justify-between fixed w-full border-b border-neutral-400 p-4 text-sm">
 		<Link href='/'>Logo</Link>
 		<ul className="flex gap-4">
@@ -24,7 +32,7 @@ export default function Navbar (props:NavbarProps) {
 				<Link href={link.url}>{link.title}</Link>
 			</li>)}
 		</ul>
-		{props.auth && <div>User</div>}
-		{!props.auth && <Link href='/sign-in'>Sign In</Link>}
+		{/* {auth && <div>User</div>}
+		{!auth && <Link href='/sign-in'>Sign In</Link>} */}
 	</nav>
 }

@@ -17,22 +17,20 @@ export default function SignForm ({children, redirection}:SignFormProps){
 				}
 			});
 
-			console.log(body);
-			try {
-				const res = await fetch("http://localhost:8000/api/auth/sign-up" , {
-					mode:"cors",
-					headers: {
-						"Content-Type": "application/json",
-					// 'Content-Type': 'application/x-www-form-urlencoded',
-					},
-					body:JSON.stringify(body),
-					method:"POST"
-				})
-				console.log(res);
-			} catch (e) {
-				console.error(e);
-
-			}
+			// try {
+			// 	const res = await fetch("http://localhost:8000/api/auth/sign-up" , {
+			// 		mode:"cors",
+			// 		headers: {
+			// 			"Content-Type": "application/json",
+			// 		// 'Content-Type': 'application/x-www-form-urlencoded',
+			// 		},
+			// 		body:JSON.stringify(body),
+			// 		method:"POST"
+			// 	})
+			// 	console.log(res);
+			// } catch (e) {
+			// 	console.error(e);
+			// }
 		}
 	}
 	function clearForm() {

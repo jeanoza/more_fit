@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from '@/app/components/navbar/navbar'
 import { API_URL } from '@/app/utils/constants'
+import useFetch from './hooks/useFetch'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,12 +22,12 @@ async function getAuth() {
 	});
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-	const auth = await getAuth();
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+	// const auth = await getAuth();
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<Navbar auth={auth}/>
+				<Navbar/>
 				<main className=''>{children}</main>
 			</body>
 		</html>

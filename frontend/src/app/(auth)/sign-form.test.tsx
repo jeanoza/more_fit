@@ -5,8 +5,10 @@ import { fireEvent, render } from '@testing-library/react'
 import SignForm from './sign-form';
 
  
-const setValue = jest.fn();
-const handleSubmit = jest.fn();
+global.fetch = jest.fn().mockResolvedValue({
+	json: {}
+}) as jest.MockedFunction<typeof fetch>;
+
 
 describe("<SignForm/>", () => {
 	it('renders  unchanged', () => {

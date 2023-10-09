@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { UserService } from '../services/user.service';
 import { generateAccessToken } from '../middlewares/jwt';
 import { LoginUserDto } from '../dtos/login-user.dto';
@@ -8,24 +8,28 @@ import { verifyToken } from '../middlewares/jwt';
 export class AuthController {
 	constructor(private readonly userService: UserService) {}
 
-	getAuth(req: Request, res: Response) {
+	getAuth(req: Request, res: Response, next: NextFunction) {
 		try {
 			const key = 'accessToken';
 			const { cookie } = req.headers;
-			// console.log(cookie);
+			console.log(cookie);
 
 			// to slice after "=" ex:accessToken=...
 			const accessToken = cookie?.split('; ')?.find((el) => el.includes(key))?.slice(key.length + 1);
+			console.log('accessToken', accessToken, typeof accessToken);
 
 			if (accessToken) {
-				const payload = verifyToken(accessToken as string);
-				if (payload) 
+				const payload = verifyToken(accessToken);
+				console.log(payload);
+				if (payload) {
 					return res.status(200).json({ auth:true });
+				}
 			}
-			res.status(401).json({ error: 'Unauthorized' });
+			// res.status(401).send(new Error('Unauthorized'));
+			throw new Error('Unauthorized');
 		} catch (error) {
-			console.log(error);
-			return res.status(400).json({ error });
+			next(error);
+			// res.status(400).json({ ...error });
 		}
 	}
 
